@@ -6,7 +6,7 @@ console.log("Welcome to the Magic Calculator!");
 let continueCalculating = true;
 while (continueCalculating) {
   let operation = prompt(
-    "Choose and operation: add, sub, multi, div, magic or exit"
+    "Choose and operation: add, subtract, multiply, divide, magic or exit"
   );
   if (operation == "exit") {
     console.log("Good bye");
@@ -19,13 +19,17 @@ while (continueCalculating) {
     case "add":
       console.log(add(num1, num2));
       break;
-    case "sub":
+    case "subtract":
       console.log(sub(num1, num2));
       break;
-    case "multi":
+    case "multiply":
       console.log(multi(num1, num2));
       break;
-    case "div":
+    case "divide":
+      if (num2 === 0 && operation === "divide") {
+        console.log("Cannot divide by zero. Try another operation.");
+        break;
+      }
       console.log(div(num1, num2));
       break;
     case "exit":
