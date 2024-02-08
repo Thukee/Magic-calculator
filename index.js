@@ -32,9 +32,8 @@ while (continueCalculating) {
       }
       console.log(div(num1, num2));
       break;
-    case "exit":
-      console.log("Aborting. Goodbye!");
-      continueCalculating = false;
+    case "magic":
+      console.log(magicOperation(num1));
       break;
     default:
       console.log("Invalid operation. Please try again.");
@@ -57,4 +56,15 @@ function multi(num1, num2) {
 
 function div(num1, num2) {
   return `${num1} devide by ${num2} is equals to ${num1 / num2}`;
+}
+
+function magicOperation(num) {
+  switch (true) {
+    case num < 10:
+      return "Magic dust makes the number grow:" + num * 10;
+    case num >= 10 && num <= 100:
+      return "A magic gnome doubles the number:" + num * 2;
+    default:
+      return "The number is too mighty for magic and remains unchanged.";
+  }
 }
