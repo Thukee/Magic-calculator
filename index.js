@@ -3,6 +3,7 @@
 console.log("Welcome to the Magic Calculator!");
 
 //Loop for repetitive execution
+
 let continueCalculating = true;
 while (continueCalculating) {
   let operation = prompt(
@@ -12,8 +13,20 @@ while (continueCalculating) {
     console.log("Good bye");
     break;
   }
+
+  //Data input for number 1 and number 2
+
   let num1 = Number(prompt("First number:"));
   let num2 = Number(prompt("Second number:"));
+
+  // Check NaN
+
+  if (isNaN(num1) || isNaN(num2)) {
+    console.log("Not a number");
+    continue;
+  }
+
+  //Switch operation for operations
 
   switch (operation) {
     case "add":
